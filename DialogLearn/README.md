@@ -27,3 +27,27 @@
 #### 2.3 DialogEdit
 
 文本控件的输入、拷贝、修改，以及对话框的退出。
+
+
+
+#### 2.4 DialogComboBox
+
+下拉框的简单教程。
+
+
+
+#### 2.5 DialogListCtrl
+
+列表实现的简单教程。
+
+
+
+#### 2.6 DialogTree
+
+树目录的简单教程。
+
+
+
+#### 2.7 DialogTabCtrl
+
+tab页的简单教程。
