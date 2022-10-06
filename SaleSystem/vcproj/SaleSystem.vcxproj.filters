@@ -1,0 +1,156 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="头文件\base">
+      <UniqueIdentifier>{88dd2c9b-cca1-4140-9d50-73fb98945cfd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\base">
+      <UniqueIdentifier>{347eb98b-17cd-4361-865e-f03ff8ff0611}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\common">
+      <UniqueIdentifier>{92436073-9072-4a0d-9553-37f75223a43f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\common">
+      <UniqueIdentifier>{72391234-f554-4c4c-9217-0aca8bbb1b6f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\component">
+      <UniqueIdentifier>{a7e443a6-e885-4b9c-b3cf-8631c9ba8055}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\component">
+      <UniqueIdentifier>{874104d2-55ba-4ff2-bd53-432c2b43c1a8}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="..\resource\SaleSystem.rc">
+      <Filter>资源文件</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\res\SaleSystem.ico">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="..\res\SaleSystemDoc.ico">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="..\images\re.ico">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="..\images\user.ico">
+      <Filter>资源文件</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\res\SaleSystem.rc2">
+      <Filter>资源文件</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\include\base\MainFrm.h">
+      <Filter>头文件\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\base\SaleSystem.h">
+      <Filter>头文件\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\base\SaleSystemDoc.h">
+      <Filter>头文件\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\base\SaleSystemView.h">
+      <Filter>头文件\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\framework.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\pch.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\targetver.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\resource\Resource.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\common\LocalParams.h">
+      <Filter>头文件\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\component\DisplayView.h">
+      <Filter>头文件\component</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\component\SelectView.h">
+      <Filter>头文件\component</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\component\DialogLogin.h">
+      <Filter>头文件\component</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\component\DialogUser.h">
+      <Filter>头文件\component</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\component\DialogSell.h">
+      <Filter>头文件\component</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\component\DialogInfo.h">
+      <Filter>头文件\component</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\component\DialogAdd.h">
+      <Filter>头文件\component</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\component\DialogRemove.h">
+      <Filter>头文件\component</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\src\pch.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\base\MainFrm.cpp">
+      <Filter>源文件\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\base\SaleSystem.cpp">
+      <Filter>源文件\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\base\SaleSystemDoc.cpp">
+      <Filter>源文件\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\base\SaleSystemView.cpp">
+      <Filter>源文件\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\common\LocalParams.cpp">
+      <Filter>源文件\common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\component\DisplayView.cpp">
+      <Filter>源文件\component</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\component\SelectView.cpp">
+      <Filter>源文件\component</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\component\DialogLogin.cpp">
+      <Filter>源文件\component</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\component\DialogUser.cpp">
+      <Filter>源文件\component</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\component\DialogSell.cpp">
+      <Filter>源文件\component</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\component\DialogInfo.cpp">
+      <Filter>源文件\component</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\component\DialogAdd.cpp">
+      <Filter>源文件\component</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\component\DialogRemove.cpp">
+      <Filter>源文件\component</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
