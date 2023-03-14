@@ -11,6 +11,8 @@ enum class AbStyle
 {
 	NONE,
 	STYLE_1,
+	STYLE_2,
+	STYLE_3,
 };
 
 // CDateView 窗体视图

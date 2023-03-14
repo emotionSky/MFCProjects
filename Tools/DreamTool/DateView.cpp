@@ -66,6 +66,8 @@ void CDateView::OnInitialUpdate()
 	m_localCombo.AddString(_T("YYYY-MM-DDTHH:MM:SS"));
 
 	m_abCombo.AddString(_T("绝对秒数"));
+	m_abCombo.AddString(_T("绝对毫秒数"));
+	m_abCombo.AddString(_T("PTS"));
 
 	m_localCombo.SetCurSel(0);
 	OnCbnSelchangeComboLocal();
@@ -95,6 +97,10 @@ void CDateView::OnCbnSelchangeComboAb()
 
 	if (str == _T("绝对秒数"))
 		m_abStyle = AbStyle::STYLE_1;
+	else if (str == _T("绝对毫秒数"))
+		m_abStyle = AbStyle::STYLE_2;
+	else if (str == _T("PTS"))
+		m_abStyle = AbStyle::STYLE_3;
 }
 
 
@@ -137,6 +143,38 @@ void CDateView::OnBnClickedButtonToAb()
 		m_abEdit = mktime(&tm);
 		break;
 	}
+
+	case AbStyle::STYLE_2:
+	{
+		struct tm tm;
+		memset(&tm, 0, sizeof(tm));
+
+		tm.tm_year = year - 1900;
+		tm.tm_mon = mon - 1;
+		tm.tm_mday = day;
+		tm.tm_hour = hour;
+		tm.tm_min = minu;
+		tm.tm_sec = sec;
+
+		m_abEdit = mktime(&tm) * 1000;
+		break;
+	}
+
+	case AbStyle::STYLE_3:
+	{
+		struct tm tm;
+		memset(&tm, 0, sizeof(tm));
+
+		tm.tm_year = year - 1900;
+		tm.tm_mon = mon - 1;
+		tm.tm_mday = day;
+		tm.tm_hour = hour;
+		tm.tm_min = minu;
+		tm.tm_sec = sec;
+
+		m_abEdit = mktime(&tm) * 90000;
+		break;
+	}
 		
 	default:
 		m_abEdit = 0;
@@ -161,6 +199,38 @@ void CDateView::OnBnClickedButtonToLocal()
 		struct tm tm;
 		memset(&tm, 0, sizeof(tm));
 		time_t t = m_abEdit;
+		localtime_s(&tm, &t);
+
+		year = tm.tm_year + 1900;
+		mon = tm.tm_mon + 1;
+		day = tm.tm_mday;
+		hour = tm.tm_hour;
+		minu = tm.tm_min;
+		sec = tm.tm_sec;
+		break;
+	}
+
+	case AbStyle::STYLE_2:
+	{
+		struct tm tm;
+		memset(&tm, 0, sizeof(tm));
+		time_t t = m_abEdit / 1000;
+		localtime_s(&tm, &t);
+
+		year = tm.tm_year + 1900;
+		mon = tm.tm_mon + 1;
+		day = tm.tm_mday;
+		hour = tm.tm_hour;
+		minu = tm.tm_min;
+		sec = tm.tm_sec;
+		break;
+	}
+
+	case AbStyle::STYLE_3:
+	{
+		struct tm tm;
+		memset(&tm, 0, sizeof(tm));
+		time_t t = m_abEdit / 90000;
 		localtime_s(&tm, &t);
 
 		year = tm.tm_year + 1900;
