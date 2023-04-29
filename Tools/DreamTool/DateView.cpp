@@ -143,7 +143,6 @@ void CDateView::OnBnClickedButtonToAb()
 		m_abEdit = mktime(&tm);
 		break;
 	}
-
 	case AbStyle::STYLE_2:
 	{
 		struct tm tm;
@@ -156,10 +155,10 @@ void CDateView::OnBnClickedButtonToAb()
 		tm.tm_min = minu;
 		tm.tm_sec = sec;
 
-		m_abEdit = mktime(&tm) * 1000;
+		m_abEdit = mktime(&tm);
+		m_abEdit *= 1000;
 		break;
 	}
-
 	case AbStyle::STYLE_3:
 	{
 		struct tm tm;
@@ -172,7 +171,8 @@ void CDateView::OnBnClickedButtonToAb()
 		tm.tm_min = minu;
 		tm.tm_sec = sec;
 
-		m_abEdit = mktime(&tm) * 90000;
+		m_abEdit = mktime(&tm);
+		m_abEdit *= 90000;
 		break;
 	}
 		
@@ -209,7 +209,6 @@ void CDateView::OnBnClickedButtonToLocal()
 		sec = tm.tm_sec;
 		break;
 	}
-
 	case AbStyle::STYLE_2:
 	{
 		struct tm tm;
@@ -225,7 +224,6 @@ void CDateView::OnBnClickedButtonToLocal()
 		sec = tm.tm_sec;
 		break;
 	}
-
 	case AbStyle::STYLE_3:
 	{
 		struct tm tm;

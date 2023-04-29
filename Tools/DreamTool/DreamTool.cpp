@@ -180,5 +180,3 @@ void CDreamToolApp::OnAppAbout()
 
 // CDreamToolApp 消息处理程序
 
-
-

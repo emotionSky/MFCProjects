@@ -51,13 +51,14 @@ void SelectView::OnInitialUpdate()
 	m_pTreeCtrl = &GetTreeCtrl();
 
 	//准备图片集合
-	HICON icon = AfxGetApp()->LoadIconW(IDI_ICON_DATE);
+	HICON icon = AfxGetApp()->LoadIcon(IDI_ICON_DATE);
 	m_imgList.Create(30, 30, ILC_COLOR32, 1, 1);
 	m_imgList.Add(icon);
 	m_pTreeCtrl->SetImageList(&m_imgList, TVSIL_NORMAL);
 
 	//添加节点
 	m_pTreeCtrl->InsertItem(TEXT("时间变换"), 0, 0, nullptr);
+	m_pTreeCtrl->InsertItem(TEXT("MD5算法"), 0, 0, nullptr);
 }
 
 void SelectView::OnTvnSelchanged(NMHDR* pNMHDR, LRESULT* pResult)
@@ -81,5 +82,7 @@ void SelectView::OnTvnSelchanged(NMHDR* pNMHDR, LRESULT* pResult)
 	//(LPARAM)0  指定附加的消息信息，此处这个参数没有意义，直接给0即可
 	if (str == TEXT("时间变换"))
 		::PostMessage(AfxGetMainWnd()->GetSafeHwnd(), EMOTIONSKY_A, (WPARAM)EMOTIONSKY_A, (LPARAM)0);
+	else if (str == TEXT("MD5算法"))
+		::PostMessage(AfxGetMainWnd()->GetSafeHwnd(), EMOTIONSKY_B, (WPARAM)EMOTIONSKY_B, (LPARAM)0);
 }
 

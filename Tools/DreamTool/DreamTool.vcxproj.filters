@@ -51,6 +51,9 @@
     <ClInclude Include="Common.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="Md5View.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DreamTool.cpp">
@@ -75,6 +78,9 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="DateView.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Md5View.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

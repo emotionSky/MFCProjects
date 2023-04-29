@@ -47,7 +47,7 @@ BOOL CDreamToolDoc::OnNewDocument()
 	// (SDI 文档将重用该文档)
 
 	//设置标题，左侧标题
-	SetTitle(TEXT("工具箱"));
+	SetTitle(TEXT("工具箱 V1.0.2"));
 
 	return TRUE;
 }

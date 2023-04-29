@@ -11,6 +11,7 @@
 #include "SelectView.h"
 #include "DisplayView.h"
 #include "DateView.h"
+#include "Md5View.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -26,6 +27,7 @@ BEGIN_MESSAGE_MAP(CMainFrame, CFrameWnd)
 	//ON_MESSAGE相应的是自定义消息类型
 	//这里是产生 EMOTIONSKY_* 消息，然后调用对应的函数进行处理
 	ON_MESSAGE(EMOTIONSKY_A, OnSelectChanged)
+	ON_MESSAGE(EMOTIONSKY_B, OnSelectChanged)
 END_MESSAGE_MAP()
 
 static UINT indicators[] =
@@ -75,7 +77,7 @@ int CMainFrame::OnCreate(LPCREATESTRUCT lpCreateStruct)
 	DockControlBar(&m_wndToolBar);
 #endif
 
-	SetClassLongPtr(m_hWnd, GCLP_HICON, (LONG_PTR)AfxGetApp()->LoadIconW(IDI_ICON_TOOL));
+	SetClassLongPtr(m_hWnd, GCLP_HICON, (LONG_PTR)AfxGetApp()->LoadIcon(IDI_ICON_TOOL));
 
 	//设置标题，右侧标题
 	SetTitle(TEXT("emotionsky"));
@@ -148,6 +150,19 @@ LRESULT CMainFrame::OnSelectChanged(WPARAM wParam, LPARAM lParam)
 		m_spliter.DeleteView(0, 1);                                                  //删除现在显示的那个子窗口，后面要换新
 		m_spliter.CreateView(0, 1, RUNTIME_CLASS(CDateView), CSize(600, 500), &ctx); //创建新的子窗口对象
 		CDateView* pNewView = dynamic_cast<CDateView*>(m_spliter.GetPane(0, 1));     //获取新的子窗口指针
+		m_spliter.RecalcLayout();                                                    //设置新的子窗口布局
+		pNewView->OnInitialUpdate();                                                 //手动调用新的子窗口的初始化
+		m_spliter.SetActivePane(0, 1);                                               //设置活动窗口
+		break;
+	}
+	case EMOTIONSKY_B:
+	{
+		ctx.m_pNewViewClass = RUNTIME_CLASS(Md5View);                              //新的子窗口类名
+		ctx.m_pCurrentFrame = this;                                                  //当前窗口的指针
+		ctx.m_pLastView = dynamic_cast<CFormView*>(m_spliter.GetPane(0, 1));         //获取现在的子窗口对象
+		m_spliter.DeleteView(0, 1);                                                  //删除现在显示的那个子窗口，后面要换新
+		m_spliter.CreateView(0, 1, RUNTIME_CLASS(Md5View), CSize(600, 500), &ctx); //创建新的子窗口对象
+		Md5View* pNewView = dynamic_cast<Md5View*>(m_spliter.GetPane(0, 1));     //获取新的子窗口指针
 		m_spliter.RecalcLayout();                                                    //设置新的子窗口布局
 		pNewView->OnInitialUpdate();                                                 //手动调用新的子窗口的初始化
 		m_spliter.SetActivePane(0, 1);                                               //设置活动窗口
