@@ -83,7 +83,7 @@ int CMainFrame::OnCreate(LPCREATESTRUCT lpCreateStruct)
 	SetTitle(TEXT("emotionsky"));
 
 	//设置窗口大小
-	MoveWindow(0, 0, 800, 500);
+	MoveWindow(0, 0, 900, 650);
 
 	//设置居中显示
 	CenterWindow();
